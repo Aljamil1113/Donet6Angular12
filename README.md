@@ -19,3 +19,6 @@ Add-Migration
 -Add-Migration InitialMigrate -OutputDir Data/Migrations
 -Update-Database
 
+#Revert Migration After applied in Db
+-Update-Database -Migration 0
+
