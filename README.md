@@ -4,7 +4,7 @@ E-Commerce using dotnet 6 and Angular 12
 
 #EF CORE COMMAND FOR VS 2022
 /*
-Add-Migration
+    Add-Migration
     Bundle-Migration
     Drop-Database
     Get-DbContext
@@ -21,4 +21,9 @@ Add-Migration
 
 #Revert Migration After applied in Db
 -Update-Database -Migration 0
+Update-Database -Migration 0 -p Infrastructure -s API
+
+Add-Migration InitialCreate -p Infrastructure -s API -o Data/Migrations
+Update-Database -p Infrastructure -s API 
+
 
