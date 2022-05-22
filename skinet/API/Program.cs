@@ -41,7 +41,7 @@ try
 {
     var context = services.GetRequiredService<StoreContext>();
     await context.Database.MigrateAsync();
-    //await StoreContextSeed.SeedAsync(context, loggerFactory);
+    await StoreContextSeed.SeedAsync(context, loggerFactory);
 }
 catch (Exception ex)
 {
