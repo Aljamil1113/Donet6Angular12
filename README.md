@@ -30,4 +30,7 @@ Update-Database -p Infrastructure -s API
 # Angular
 -ng new client
 
+# Bootstrap
+ng add ngx-bootstrap
+
 
