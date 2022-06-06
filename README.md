@@ -27,3 +27,7 @@ Add-Migration InitialCreate -p Infrastructure -s API -o Data/Migrations
 Update-Database -p Infrastructure -s API 
 
 
+# Angular
+-ng new client
+
+
