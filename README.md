@@ -32,5 +32,6 @@ Update-Database -p Infrastructure -s API
 
 # Bootstrap
 ng add ngx-bootstrap
+npm install ngx-toastr
 
 
