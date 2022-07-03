@@ -9,7 +9,7 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection Services)
         {
-
+            Services.AddScoped<IBasketRepository, BasketRepository>();
             Services.AddScoped<IProductRepository, ProductRepository>();
             Services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
 
