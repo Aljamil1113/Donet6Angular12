@@ -13,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<ConnectionMultiplexer>(c =>
+builder.Services.AddDbContext<StoreContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
 {
     var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);
 
@@ -21,8 +23,6 @@ builder.Services.AddSingleton<ConnectionMultiplexer>(c =>
 });
 
 builder.Services.AddApplicationServices();
-
-builder.Services.AddDbContext<StoreContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
